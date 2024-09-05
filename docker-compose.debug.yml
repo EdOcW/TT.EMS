@@ -1,0 +1,55 @@
+services:
+  tt.ems.web.api:
+    image: tt.ems.web.api
+    build:
+      context: .
+      dockerfile: Backend/src/TT.EMS.Web.Api/Dockerfile
+      args:
+        - configuration=Debug
+    networks:
+      - tt.ems
+    ports:
+      - 5054:5054
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development.Docker
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+    restart: unless-stopped
+
+  tt.ems-db:
+    image: postgres:16.4
+    container_name: tt.ems-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-TT-EMS}
+      PGDATA: /data/postgres
+    volumes:
+       - tt.ems-db:/data/postgres
+    networks:
+      - tt.ems
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+  
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-postgres@mailpostgres.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-postgres}
+    volumes:
+      - pgadmin:/root/.pgadmin
+    networks:
+      - tt.ems
+    ports:
+      - "${PGADMIN_PORT:-7000}:80"
+    restart: unless-stopped
+
+volumes:
+  tt.ems-db:
+  pgadmin:
+
+networks:
+  tt.ems:
+    driver: bridge
