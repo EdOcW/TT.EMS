@@ -1,7 +1,6 @@
 # TT.EMS
-Test task "Employee managment system"
-
 It is necessary to develop an application using data, create a table Employees (Id, FirstName, LastName, Age, Sex) SQL database can be used Manager Studio, the data must be filled in by yourself (a few records are enough). The application should consist of several layers (at the developer's discretion). Any technology can be used to query the database, at the discretion of the developer. The application must have an API to get the list of Employees, add, edit and delete them.
+
 The client application should be a single page app on React.
  
 Requirements
@@ -28,24 +27,24 @@ Design requirements:
 To perform the task, you can use APIs with .NET Core or MVC Web APIs, not in principle. React application should be written using hooks, applying Redux is optional.
 
 # Backend stack:
-Architecture: Monolith with DDD.
-Virtualization: Docker.
-Platform: .Net 8.
-APIs : Minimal APIs.
-ORM: EntityFrameworkCore.
-SQRS: MediatR.
-Logger: Serilog.AspNetCore.
-Mapping: Mapster.
-Resilience and transient-fault-handling: polly.
-OpenAPI Specification: Swagger.
+- Architecture: Monolith with DDD
+- Virtualization: Docker
+- Platform: .Net 8
+- APIs : Minimal APIs
+- ORM: EntityFrameworkCore
+- SQRS: MediatR
+- Logger: Serilog.AspNetCore
+- Mapping: Mapster
+- Resilience and transient-fault-handling: polly
+- OpenAPI Specification: Swagger
 
-Db: PostgreSql.
-DbManager: pgadmin.
+- Db: PostgreSql.
+- DbManager: pgadmin.
 
 # Frontend stack:
-react: 18.3.1,
-react-axios: 2.0.6,
-react-dom": 18.3.1,
+- react: 18.3.1,
+- react-axios: 2.0.6,
+- react-dom": 18.3.1,
 
 # How to start the project
 Required Environment: Docker.
