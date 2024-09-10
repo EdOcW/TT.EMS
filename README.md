@@ -38,13 +38,13 @@ To perform the task, you can use APIs with .NET Core or MVC Web APIs, not in pri
 - Resilience and transient-fault-handling: polly
 - OpenAPI Specification: Swagger
 
-- Db: PostgreSql.
-- DbManager: pgadmin.
+- Db: PostgreSql
+- DbManager: pgadmin
 
 # Frontend stack:
-- react: 18.3.1,
-- react-axios: 2.0.6,
-- react-dom": 18.3.1,
+- react: 18.3.1
+- react-axios: 2.0.6
+- react-dom": 18.3.1
 
 # How to start the project
 Required Environment: Docker.
@@ -61,6 +61,8 @@ CLR commands for terminal:
 
 # How to look at the project
 
-Frontend: http://localhost:3000/
+- Frontend: http://localhost:3000/
 
-BackEnd: http://localhost:5054/swagger/index.html
+- BackEnd: http://localhost:5054/swagger/index.html
+
+- Database: http://localhost:7000/
