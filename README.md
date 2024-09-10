@@ -65,4 +65,4 @@ CLR commands for terminal:
 
 - BackEnd: http://localhost:5054/swagger/index.html
 
-- Database: http://localhost:7000/
+- DbManager: http://localhost:7000/
