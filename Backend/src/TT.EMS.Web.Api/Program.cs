@@ -3,11 +3,12 @@ using TT.EMS.Infrastructure.Extension;
 using TT.EMS.Application.Extensions;
 using TT.EMS.Web.Api.Extensions;
 using TT.EMS.Web.Api.Endpoints;
+using TT.EMS.Web.Api.Constants;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddPresentation()
+    .AddPresentation(builder.Configuration)
     .AddApplication()
     .AddInfrastructure(builder.Configuration);
 
@@ -18,7 +19,8 @@ builder.Host
 var app = builder.Build();
 
 app
-    .UseSerilogRequestLogging();
+    .UseSerilogRequestLogging()
+    .UseCors(PresentationConstants.Cors.CorsPolicyName);
 
 app
     .RegisterEmployeeEndpoints();

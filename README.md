@@ -28,16 +28,40 @@ Design requirements:
 To perform the task, you can use APIs with .NET Core or MVC Web APIs, not in principle. React application should be written using hooks, applying Redux is optional.
 
 # Backend stack:
-Architecture: Monolith with DDD
-Virtualization: Docker
-Platform: .Net 8
-APIs : Minimal APIs
-ORM: EntityFrameworkCore
-SQRS: MediatR
-Logger: Serilog.AspNetCore
-Mapping: Mapster
-Resilience and transient-fault-handling: polly
-OpenAPI Specification: Swagger
+Architecture: Monolith with DDD.
+Virtualization: Docker.
+Platform: .Net 8.
+APIs : Minimal APIs.
+ORM: EntityFrameworkCore.
+SQRS: MediatR.
+Logger: Serilog.AspNetCore.
+Mapping: Mapster.
+Resilience and transient-fault-handling: polly.
+OpenAPI Specification: Swagger.
 
-Db: PostgreSql
-DbManager: pgadmin
+Db: PostgreSql.
+DbManager: pgadmin.
+
+# Frontend stack:
+react: 18.3.1,
+react-axios: 2.0.6,
+react-dom": 18.3.1,
+
+# How to start the project
+Required Environment: Docker.
+
+You need to go to the root folder of the project, where the docker-compose files are located.
+
+CLR commands for terminal:
+
+- Debug:
+        docker compose -f "docker-compose.debug.yml" up -d --build
+
+- Prod:
+        docker compose -f "docker-compose.yml" up -d --build
+
+# How to look at the project
+
+Frontend: http://localhost:3000/
+
+BackEnd: http://localhost:5054/swagger/index.html

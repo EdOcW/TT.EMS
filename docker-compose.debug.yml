@@ -16,6 +16,23 @@ services:
       - ~/.vsdbg:/remote_debugger:rw
     restart: unless-stopped
 
+  tt.ems.web.ui:
+    image: tt.ems.web.ui
+    container_name: tt.ems.web.ui
+    build:
+      context: Frontend/src/tt.ems.web.ui
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    networks:
+      - tt.ems
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - ./Frontend/src/tt.ems.web.ui:/app
+    restart: unless-stopped
+
   tt.ems-db:
     image: postgres:16.4
     container_name: tt.ems-db
@@ -47,6 +64,7 @@ services:
     restart: unless-stopped
 
 volumes:
+  tt.ems.web.ui:
   tt.ems-db:
   pgadmin:
 
