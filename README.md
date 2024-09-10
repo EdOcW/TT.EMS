@@ -49,7 +49,7 @@ To perform the task, you can use APIs with .NET Core or MVC Web APIs, not in pri
 # How to start the project
 Required Environment: Docker.
 
-You need to go to the root folder of the project, where the docker-compose files are located.
+Running commands from the root path.
 
 CLR commands for terminal:
 
